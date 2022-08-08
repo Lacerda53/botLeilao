@@ -1,0 +1,18 @@
+{
+  "name": "botleilao",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "node-cron": "^3.0.1",
+    "puppeteer": "^16.1.0",
+    "telegraf": "^4.8.6",
+    "uuid": "^8.3.2"
+  }
+}
