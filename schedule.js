@@ -1,7 +1,5 @@
 const puppeteer = require("puppeteer");
 const { Telegraf } = require("telegraf");
-const cron = require("node-cron");
-const express = require("express");
 const fs = require("fs");
 const { format } = require("date-fns");
 const pt = require("date-fns/locale/pt");
@@ -12,7 +10,6 @@ const CITY = "4717"; // 4717 - JACUNDA
 const URL =
   "https://venda-imoveis.caixa.gov.br/sistema/busca-imovel.asp?sltTipoBusca=imoveis";
 
-const app = express();
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const chatId = process.env.CHAT_ID;
 
@@ -72,6 +69,4 @@ async function start() {
   await browser.close();
 }
 
-cron.schedule("*/5 * * * *", start);
-
-app.listen(process.env.PORT || 3000);
+start();
